@@ -1,92 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PPOYO - Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background: #fff;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .main-section {
+      position: relative;
+      height: 100vh;
+      color: white;
+      text-align: center;
+    }
+    .main-section .background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(10px);
+      z-index: 0;
+    }
+    .main-section .foreground {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      z-index: 1;
+    }
+    .main-section .content {
+      position: relative;
+      z-index: 2;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .main-section h1 {
+      font-size: 4em;
+    }
+    .sns-links {
+      margin-top: 20px;
+      font-size: 1.5em;
+    }
+    .sns-links a {
+      margin: 0 10px;
+    }
 
-<!DOCTYPE HTML>
-<!--
-	Identity by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Identity by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+    .profile-section {
+      position: relative;
+      padding: 80px 20px;
+      background: black;
+      color: white;
+    }
+    .profile-section .profile-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.3;
+      z-index: 0;
+    }
+    .profile-section .content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    .portfolio-section {
+      padding: 60px 20px;
+      background: #f4f4f4;
+    }
+    .portfolio-section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .portfolio-grid {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+    .portfolio-column {
+      max-width: 400px;
+    }
+    .portfolio-column h3 {
+      margin-bottom: 20px;
+    }
 
-				<!-- Main -->
-					<section id="main">
-						<header>
-							<span class="avatar"><img src="images/avatar.jpg" alt="" /></span>
-							<h1>Jane Doe</h1>
-							<p>Senior Psychonautics Engineer</p>
-						</header>
-						<!--
-						<hr />
-						<h2>Extra Stuff!</h2>
-						<form method="post" action="#">
-							<div class="fields">
-								<div class="field">
-									<input type="text" name="name" id="name" placeholder="Name" />
-								</div>
-								<div class="field">
-									<input type="email" name="email" id="email" placeholder="Email" />
-								</div>
-								<div class="field">
-									<select name="department" id="department">
-										<option value="">Department</option>
-										<option value="sales">Sales</option>
-										<option value="tech">Tech Support</option>
-										<option value="null">/dev/null</option>
-									</select>
-								</div>
-								<div class="field">
-									<textarea name="message" id="message" placeholder="Message" rows="4"></textarea>
-								</div>
-								<div class="field">
-									<input type="checkbox" id="human" name="human" /><label for="human">I'm a human</label>
-								</div>
-								<div class="field">
-									<label>But are you a robot?</label>
-									<input type="radio" id="robot_yes" name="robot" /><label for="robot_yes">Yes</label>
-									<input type="radio" id="robot_no" name="robot" /><label for="robot_no">No</label>
-								</div>
-							</div>
-							<ul class="actions special">
-								<li><a href="#" class="button">Get Started</a></li>
-							</ul>
-						</form>
-						<hr />
-						-->
-						<footer>
-							<ul class="icons">
-								<li><a href="#" class="icon brands fa-twitter">Twitter</a></li>
-								<li><a href="#" class="icon brands fa-instagram">Instagram</a></li>
-								<li><a href="#" class="icon brands fa-facebook-f">Facebook</a></li>
-							</ul>
-						</footer>
-					</section>
+    .gallery-section {
+      padding: 60px 20px;
+    }
+    .gallery-section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 10px;
+    }
+    .gallery-grid img {
+      width: 100%;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: transform 0.2s;
+    }
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+    }
+  </style>
+</head>
+<body>
+  <section class="main-section">
+    <img src="/mnt/data/aa.png" alt="blurred bg" class="background">
+    <img src="/mnt/data/aa.png" alt="main photo" class="foreground">
+    <div class="content">
+      <h1>PPOYO</h1>
+      <p>MUSICIAN / COMPOSER / ARTIST</p>
+      <p>LOADING...<br>(이 문구는 완성됐지만 작성)</p>
+      <div class="sns-links">
+        <a href="#">🔗</a>
+        <a href="#">📷</a>
+        <a href="#">▶️</a>
+      </div>
+    </div>
+  </section>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<ul class="copyright">
-							<li>&copy; Jane Doe</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</footer>
+  <section class="profile-section">
+    <img src="/mnt/data/aa.png" alt="profile bg" class="profile-bg">
+    <div class="content">
+      <h2>PROFILE</h2>
+      <h3>어쩌구저쩌구</h3>
+      <p>(기본정보와 활동이력을 쓴다)</p>
+      <ul>
+        <li>2021~23 예비활동</li>
+        <li>2022~25 루시드림</li>
+        <li>작곡활동</li>
+        <li>육타버리움 엔지니어</li>
+      </ul>
+    </div>
+  </section>
 
-			</div>
+  <section class="portfolio-section">
+    <h2>PORTFOLIO</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-column">
+        <h3>자연운장르</h3>
+        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/yourtrackid"></iframe>
+        <!-- 반복 가능 -->
+      </div>
+      <div class="portfolio-column">
+        <h3>무거운장르</h3>
+        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/yourtrackid"></iframe>
+      </div>
+    </div>
+  </section>
 
-		<!-- Scripts -->
-			<script>
-				if ('addEventListener' in window) {
-					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
-					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
-				}
-			</script>
+  <section class="gallery-section">
+    <h2>기타 무대활동 사진 (갤러리 형식)</h2>
+    <div class="gallery-grid">
+      <img src="cat1.jpg" alt="gallery image">
+      <img src="cat2.jpg" alt="gallery image">
+      <img src="cat3.jpg" alt="gallery image">
+      <!-- 이미지 추가 가능 -->
+    </div>
+  </section>
 
-	</body>
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="preview">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    document.querySelectorAll('.gallery-grid img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+      });
+    });
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+  </script>
+</body>
 </html>
