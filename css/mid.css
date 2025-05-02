@@ -1,0 +1,338 @@
+@media screen and (max-width: 1199px) and (min-width: 768px) {
+
+  .wrap{
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .blur-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/main-image.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(8px);
+    z-index: 0;
+    opacity: 60%;
+  }
+  
+  .out_box{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+  
+  .box_1{
+    height: 100vh;
+  }
+  
+  .main-text-wrap{
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    height: 500px;
+    transition-duration: 0.3s;
+    /* background-color: #cccccc; */
+  }
+  
+  .main-text{
+    font-family: 'font-1';
+    color: #FAFAFA;
+    text-shadow: 3px 3px 5px rgba(31, 31, 31, 0.9);
+    font-weight: 700;
+    margin-left: 20px;
+    /* font-size: 4rem; */
+  }
+  
+  .big-main-text{
+    font-size: 110px;
+  }
+  
+  .mid-main-text,.small-main-text{
+    font-size: 40px;
+    transition-duration: 0.3s;
+  }
+  
+  .main-img-box{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+  }
+
+  .symbol-wrap{
+    width: 230px;
+    height: 230px;
+    position: absolute;
+    bottom: 0;
+    transition-duration: 0.3s;
+  }
+  
+  .sns-wrap{
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    right: calc(50% - 450px);
+    bottom: 0;
+    transition-duration: 0.3s;
+  }
+  
+  .sns-text{
+    margin: 20px auto;
+    width: 250px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-family: "Poor Story", system-ui;
+    color: #FAFAFA;
+    font-size: 36px;
+    text-shadow: 2px 2px 3px #333333;
+  }
+  
+  .sns-icon-box{
+    width: 200px;
+    height: 320px;
+    float: right;
+    border-left: 3px solid #fafafa;
+    padding: 7px 20px;
+    box-sizing: border-box;
+    flex-direction: column;
+  }
+  
+  .sns-icon{
+    width: 55px;
+    height: 50px;
+    margin-bottom: 30px;
+    cursor: pointer;
+  }
+  
+  .sns-icon img{
+    display: block;
+    object-fit: contain;
+  }
+  
+  /*  */
+  
+  .box_2{
+    margin: 30px auto;
+    width: 100%;
+    max-width: 1200px;
+    height: 400px;
+    background-image: url(../img/profie-img.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .title{
+    width: 100%;
+    height: 40px;
+    font-size: 40px;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+  }
+  
+  .profile-title{
+    color: #fafafa;
+  }
+  
+  .profile-text-wrap{
+    width: 100%;
+    height: calc(100% - 90px);
+    color: #fafafa;
+  }
+  
+  .p-text-1,.p-text-2{
+    font-size: 20px;
+    font-family: "Poor Story", system-ui;
+  }
+  
+  .profile-text-wrap p{
+    margin: 7px 0;
+  }
+  
+  .p-text-2{
+    margin: 7px 0px 7px 10px !important;
+  }
+  
+  /*  */
+  
+  .box_3{
+    margin: 30px auto;
+    width: 100%;
+    height: 680px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .portfolio_title{
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .p-text-3{
+    font-size: 26px;
+    font-family: "Poor Story", system-ui;
+    margin: 20px 0 30px 0;
+  }
+  
+  .portfolio_box-wrap{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    transition-duration: 0.3s;
+  }
+  
+  .portfolio_box{
+    width: 50%;
+    height: calc(100% - 150px);
+  }
+  
+  .music-box_wrap{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .music-box_wrap iframe{
+    background-color: #333333;
+  }
+  
+  
+  .music-box{
+    width: 100%;
+    height: 150px;
+    background-color: #333333;
+    box-shadow: 5px 5px 3px #595959;
+    border-radius: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  .m-box-1{
+    height: 510px;
+  }
+  
+  /*  */
+  
+  .box_4{
+    width: 100%;
+    height: 1500px;
+    background-color: rgba(254, 112, 131, 0.4);
+  }
+  
+  .etc_box{
+    width: 100%;
+    height: 100%;
+    padding: 70px 20px;
+    box-sizing: border-box;
+    transition-duration: 0.3s;
+  }
+  
+  .gallery-warp{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    transition-duration: 0.3s;
+  }
+  
+  .g-box-left{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    transition-duration: 0.3s;
+  }
+  
+  .g-box-right{
+    margin: 0 auto;
+    width: 40%;
+    height: 40%;
+    transition-duration: 0.3s;
+  }
+  
+  .g-box-right img{
+    border-radius: 12px;
+    box-sizing: border-box;
+    /* border: 4px solid #FFB703; */
+  }
+  
+  .gallery-con{
+    border-radius: 12px;
+    box-sizing: border-box;
+  }
+  
+  .gallery-con img{
+    display: block;
+    border-radius: 12px;
+  }
+  
+  .g-con-1{
+    height: 200px;
+    /* border: 4px solid #00C2CB; */
+  }
+  
+  .g-con-2{
+    height: 250px;
+    /* border: 4px solid #FFB703; */
+  }
+  
+  .g-con-3{
+    height: 300px;
+    /* border: 4px solid #8C52FF; */
+  }
+  
+  .g-con-4{
+    width: 420px;
+    height: 250px;
+    /* border: 4px solid #FFB703; */
+  }
+
+/*  */
+  
+  .box_5{
+    margin: 30px 0;
+    height: 600px;
+  }
+  
+  .footer_wrap{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .e-mail_text{
+    font-family: "Poor Story", system-ui;
+    margin-top: 20px;
+    width: 100%;
+    height: 30px;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  }

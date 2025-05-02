@@ -1,0 +1,351 @@
+@media screen and (min-width: 1200px) {
+
+.wrap{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.blur-background{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 1920px;
+  height: 100%;
+  background-image: url(../img/main-image.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(8px);
+  z-index: 0;
+  opacity: 60%;
+}
+
+.out_box{
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.box_1{
+  height: 100vh;
+}
+
+.main-text-wrap{
+  position: absolute;
+  top: 70px;
+  width: 100%;
+  height: 500px;
+  /* background-color: #cccccc; */
+}
+
+.main-text{
+  font-family: 'font-1';
+  letter-spacing: 5px;
+  color: #FAFAFA;
+  text-shadow: 3px 3px 5px rgba(31, 31, 31, 0.9);
+  font-weight: 700;
+  margin-left: 20px;
+  /* font-size: 2rem; */
+}
+
+.big-main-text{
+  font-size: 110px;
+}
+
+.mid-main-text,.small-main-text{
+  font-size: 40px;
+  transition-duration: 0.3s;
+}
+
+.main-img-box{
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+}
+
+.symbol-wrap{
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  bottom: 0;
+  transition-duration: 0.3s;
+}
+
+.symbol-wrap img{
+  object-fit: contain;
+  display: block;
+}
+
+.sns-wrap{
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  right: calc(50% - 600px);
+  bottom: 0;
+  transition-duration: 0.3s;
+}
+
+.sns-text{
+  margin: 20px auto;
+  width: 250px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-family: "Poor Story", system-ui;
+  color: #FAFAFA;
+  font-size: 36px;
+  text-shadow: 2px 2px 3px #333333;
+}
+
+.sns-icon-box{
+  width: 200px;
+  height: 320px;
+  float: right;
+  border-left: 3px solid #fafafa;
+  padding: 7px 20px;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+.sns-icon{
+  width: 55px;
+  height: 50px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.sns-icon img{
+  display: block;
+  object-fit: contain;
+}
+
+/*  */
+
+.box_2{
+  margin: 30px auto;
+  width: 100%;
+  max-width: 1200px;
+  height: 400px;
+  background-image: url(../img/profie-img.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.title{
+  width: 100%;
+  height: 40px;
+  font-size: 40px;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 4px;
+  margin-bottom: 30px;
+}
+
+.profile-title{
+  color: #fafafa;
+}
+
+.profile-text-wrap{
+  width: 100%;
+  height: calc(100% - 90px);
+  color: #fafafa;
+}
+
+.p-text-1,.p-text-2{
+  font-size: 20px;
+  font-family: "Poor Story", system-ui;
+}
+
+.profile-text-wrap p{
+  margin: 7px 0;
+}
+
+.p-text-2{
+  margin: 7px 0px 7px 10px !important;
+}
+
+/*  */
+
+.box_3{
+  margin-top: 30px;
+  width: 100%;
+  height: 670px;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: rgba(250, 250, 250, .3);
+}
+
+.portfolio_title{
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.p-text-3{
+  width: 100%;
+  font-size: 26px;
+  font-family: "Poor Story", system-ui;
+  margin-bottom: 30px;
+}
+
+.portfolio_box-wrap{
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  transition-duration: 0.3s;
+}
+
+.portfolio_box{
+  width: 50%;
+  height: calc(100% - 150px);
+}
+
+.music-box_wrap{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.music-box_wrap iframe{
+  background-color: #333333;
+}
+
+
+.music-box{
+  width: 100%;
+  height: 150px;
+  background-color: #333333;
+  box-shadow: 5px 5px 3px #595959;
+  border-radius: 10px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.m-box-1{
+  height: 510px;
+}
+
+/*  */
+
+.box_4{
+  width: 100%;
+  height: 950px;
+  background-color: rgba(254, 112, 131, 0.4);
+}
+
+.etc_box{
+  width: 100%;
+  height: 100%;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1200px;
+  align-content: center;
+  transition-duration: 0.3s;
+}
+
+.gallery-warp{
+  width: 100%;
+  height: calc(100% - 250px);
+  display: flex;
+  gap: 30px;
+  transition-duration: 0.3s;
+}
+
+.g-box-left{
+  width: 883px;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  transition-duration: 0.3s;
+}
+
+.g-box-right{
+  width: calc(100% - 883px);
+  height: 100%;
+  transition-duration: 0.3s;
+}
+
+.g-box-right img{
+  border-radius: 12px;
+  box-sizing: border-box;
+  /* border: 4px solid #FFB703; */
+}
+
+.gallery-con{
+  width: 200px;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.gallery-con img{
+  display: block;
+  border-radius: 12px;
+}
+
+.g-con-1{
+  height: 200px;
+  /* border: 4px solid #00C2CB; */
+}
+
+.g-con-2{
+  height: 250px;
+  /* border: 4px solid #FFB703; */
+}
+
+.g-con-3{
+  height: 300px;
+  /* border: 4px solid #8C52FF; */
+}
+
+.g-con-4{
+  width: 420px;
+  height: 250px;
+  /* border: 4px solid #FFB703; */
+}
+
+/*  */
+
+.box_5{
+  margin: 30px 0;
+  height: 600px;
+}
+
+.footer_wrap{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.e-mail_text{
+  font-family: "Poor Story", system-ui;
+  margin-top: 20px;
+  width: 100%;
+  height: 30px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+}

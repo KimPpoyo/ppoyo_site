@@ -1,0 +1,42 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+a,
+a:hover,
+a:active,
+a:focus{
+  text-decoration: none;
+  color: #333333;
+}
+
+html,body{
+  /* font-family: "Cabin Sketch", sans-serif;
+  font-family: "Bebas Neue", sans-serif;
+  font-family: "Poor Story", system-ui; */
+  font-family: "Noto Sans KR", sans-serif;
+  background: #FEF0F4;
+}
+
+@font-face {
+  font-family: 'font-1';
+  src: url('../font/Dolato\ de\ Stato\ Font.ttf') format('truetype');
+}
+
+  /* 
+  스케치 효과 글씨체
+  font-family: "Cabin Sketch", sans-serif;
+
+  두꺼운체
+  font-family: "Bebas Neue", sans-serif;
+
+  귀여운체
+  font-family: "Poor Story", system-ui; 
+  */
