@@ -40,3 +40,212 @@ html,body{
   귀여운체
   font-family: "Poor Story", system-ui; 
   */
+
+/* 유튜브 레이어 팝업 스타일 */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.popup-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-content {
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 95%; /* 90%에서 95%로 증가 */
+  max-height: 95%; /* 90%에서 95%로 증가 */
+  transform: scale(0.7);
+  transition: transform 0.3s ease;
+}
+
+.popup-overlay.show .popup-content {
+  transform: scale(1);
+}
+
+.popup-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 30px;
+  height: 30px;
+  background: #ff4757;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  transition: background-color 0.2s ease;
+}
+
+.popup-close:hover {
+  background: #ff3742;
+}
+
+.youtube-container {
+  position: relative;
+  width: 90vw; /* 80vw에서 90vw로 증가 */
+  height: 50.6vw; /* 45vw에서 50.6vw로 증가 (16:9 비율 유지) */
+  max-width: 1200px; /* 900px에서 1200px로 증가 */
+  max-height: 675px; /* 506px에서 675px로 증가 */
+  min-width: 320px;
+  min-height: 180px;
+}
+
+.youtube-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  border: none;
+  border-radius: 5px;
+}
+
+/* 이미지 레이어 팝업 스타일 */
+.image-popup-content {
+  background: transparent;
+  padding: 0;
+  max-width: 95%;
+  max-height: 95%;
+  border-radius: 0;
+}
+
+.image-container {
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* 갤러리 이미지에 커서 포인터 추가 */
+.gallery-con {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-con:hover {
+  transform: scale(1.05);
+}
+
+/* 유튜브 갤러리 스타일 */
+.youtube-gallery-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.youtube-gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.youtube-item {
+  width: 100%;
+  max-width: 220px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.youtube-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.youtube-thumbnail {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 비율 */
+  border-radius: 8px;
+  overflow: hidden;
+  background: #000;
+}
+
+.youtube-thumbnail img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.youtube-item:hover .youtube-thumbnail img {
+  transform: scale(1.05);
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 0, 0, 0.8);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.youtube-item:hover .play-button {
+  background: rgba(255, 0, 0, 1);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.youtube-title {
+  margin: 12px 0 0 0;
+  font-size: 14px;
+  font-family: "Poor Story", system-ui;
+  color: #333;
+  text-align: center;
+  line-height: 1.4;
+  font-weight: normal;
+  transition: color 0.3s ease;
+}
+
+.youtube-item:hover .youtube-title {
+  color: #ff0000;
+}

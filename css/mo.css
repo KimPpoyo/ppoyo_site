@@ -71,6 +71,7 @@
     height: 150px;
     position: absolute;
     bottom: 0;
+    left: 0; /* 모바일에서는 좌측 배치 */
     transition-duration: 0.3s;
   }
   
@@ -122,7 +123,8 @@
   .box_2{
     margin: 0 auto;
     width: 100%;
-    height: 40vh;
+    height: auto; /* 90vh에서 auto로 변경하여 내용에 맞게 조정 */
+    min-height: 90vh; /* 최소 높이는 90vh로 설정 */
     background-image: url(../img/profie-img.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -147,6 +149,40 @@
     width: 100%;
     height: calc(100% - 90px);
     color: #fafafa;
+    display: flex;
+    flex-direction: column; /* 모바일에서는 세로 배치 */
+    gap: 10px;
+  }
+
+  .profile-section {
+    width: 100%;
+  }
+
+  /* 모바일에서는 세로 배치이므로 비율보다는 내용에 맞는 크기 */
+  .profile-section:first-child {
+    flex: none; /* 활동이력은 내용에 맞게 */
+  }
+
+  .profile-section:last-child {
+    flex: 1; /* 작곡은 남은 공간 사용 */
+  }
+
+  .profile-section .p-text-1 {
+    margin-bottom: 5px;
+  }
+
+  /* 모바일에서는 작곡 목록을 2열로 배치 */
+  .composition-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3px 5px; /* 상하 간격 3px, 좌우 간격 5px */
+    margin-top: 5px;
+  }
+
+  .composition-list .p-text-2 {
+    margin: 0 !important; /* 기존 2px에서 0으로 변경 */
+    font-size: 14px;
+    line-height: 1.1; /* 1.2에서 1.1로 줄임 */
   }
   
   .p-text-1,.p-text-2{
@@ -166,8 +202,8 @@
   
   .box_3{
     width: 100%;
-    height: fit-content;
-    /* height: 1000px; */
+    height: auto; /* 고정 높이 대신 자동 높이로 변경 */
+    min-height: 1550px; /* 내용에 맞는 높이 */
     padding: 20px;
     box-sizing: border-box;
   }
@@ -175,6 +211,36 @@
   .portfolio_title{
     margin: 0 auto;
     width: 100%;
+  }
+
+  /* 포트폴리오 유튜브 섹션 */
+  .portfolio-youtube-section {
+    margin: 30px auto 40px auto; /* 하단 여백 증가 */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+
+  .portfolio-youtube-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 비율 */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .portfolio-youtube-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
   }
   
   .p-text-3{
@@ -188,13 +254,14 @@
     height: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 100px;
+    gap: 30px; /* 50px에서 30px로 더 줄임 */
     transition-duration: 0.3s;
   }
   
   .portfolio_box{
     width: 100%;
-    height: calc(100% - 150px);
+    height: auto; /* 자동 높이로 변경 */
+    min-height: fit-content; /* 내용에 맞는 높이 */
   }
 
   
@@ -211,7 +278,7 @@
   
   .music-box{
     width: 100%;
-    height: 150px;
+    height: 130px; /* 140px에서 130px로 더 줄임 */
     background-color: #333333;
     box-shadow: 5px 5px 3px #595959;
     border-radius: 10px;
@@ -230,7 +297,7 @@
   }
 
   .m-box-5{
-    margin: 20px 0;
+    margin: 10px 0; /* 15px에서 10px로 더 줄임 */
   }
   
   /*  */
@@ -253,24 +320,25 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    gap: 15px; /* 간격 통일 */
+    justify-content: space-between; /* 균등 배치 */
     transition-duration: 0.3s;
   }
   
   .g-box-left{
     width: 100%;
-    height: 100%;
+    height: auto; /* 100%에서 auto로 변경 */
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-    margin-bottom: 30px;
+    gap: 15px;
+    justify-content: space-between;
     transition-duration: 0.3s;
   }
   
   .g-box-right{
-    margin: 0 auto;
-    width: 250px;
-    height: 330px;
+    width: 45%; /* 다른 아이템과 동일한 크기 */
+    height: auto;
+    aspect-ratio: 1; /* 정사각형 비율 */
     transition-duration: 0.3s;
   }
   
@@ -281,8 +349,9 @@
   }
   
   .gallery-con{
-    width: 250px;
-    height: 250px;
+    width: 45%; /* 250px에서 45%로 변경하여 한 줄에 2개씩 */
+    height: auto; /* 고정 높이 대신 자동 높이 */
+    aspect-ratio: 1; /* 정사각형 비율 유지 */
     border-radius: 12px;
     box-sizing: border-box;
   }
@@ -315,15 +384,26 @@
   
   .box_5{
     margin: 30px 0;
-    height: 600px;
+    height: auto; /* 자동 높이로 변경 */
+    min-height: 600px;
   }
   
   .footer_wrap{
     width: 100%;
     height: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column; /* 세로 정렬로 변경 */
     justify-content: center;
+  }
+
+  /* 모바일 유튜브 갤러리 */
+  .youtube-gallery-container {
+    grid-template-columns: repeat(2, 1fr); /* 모바일에서는 2열 */
+    gap: 15px;
+  }
+
+  .youtube-title {
+    font-size: 12px; /* 모바일에서 폰트 크기 조정 */
   }
   
   .e-mail_text{
@@ -334,16 +414,28 @@
     font-size: 1.5rem;
     text-align: center;
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+  /* 모바일용 팝업 스타일 */
+  .popup-content {
+    padding: 15px;
+    max-width: 98%; /* 95%에서 98%로 증가 */
+    max-height: 98%; /* 95%에서 98%로 증가 */
   }
+
+  .youtube-container {
+    width: 95vw; /* 90vw에서 95vw로 증가 */
+    height: 53.4vw; /* 50.6vw에서 53.4vw로 증가 (16:9 비율 유지) */
+    max-width: none;
+    max-height: none;
+    min-width: 280px;
+    min-height: 157px;
+  }
+
+  .popup-close {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+    top: -15px;
+    right: -15px;
+  }
+}

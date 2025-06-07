@@ -71,6 +71,7 @@
   height: 250px;
   position: absolute;
   bottom: 0;
+  right: 420px; /* sns-wrap(400px) + 여백(20px) */
   transition-duration: 0.3s;
 }
 
@@ -128,7 +129,7 @@
   margin: 30px auto;
   width: 100%;
   max-width: 1200px;
-  height: 400px;
+  height: 600px; /* 400px에서 600px로 증가 */
   background-image: url(../img/profie-img.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -153,6 +154,39 @@
   width: 100%;
   height: calc(100% - 90px);
   color: #fafafa;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.profile-section {
+  min-width: 300px;
+}
+
+.profile-section:first-child {
+  flex: 3; /* 활동이력 30% */
+}
+
+.profile-section:last-child {
+  flex: 7; /* 작곡 70% */
+}
+
+.profile-section .p-text-1 {
+  margin-bottom: 10px;
+}
+
+/* 작곡 목록을 3열로 배치 */
+.composition-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px 10px; /* 상하 간격 5px, 좌우 간격 10px */
+  margin-top: 10px;
+}
+
+.composition-list .p-text-2 {
+  margin: 0 !important; /* 기존 3px에서 0으로 변경 */
+  font-size: 16px;
+  line-height: 1.2; /* 1.3에서 1.2로 줄임 */
 }
 
 .p-text-1,.p-text-2{
@@ -173,7 +207,8 @@
 .box_3{
   margin-top: 30px;
   width: 100%;
-  height: 670px;
+  height: auto; /* 고정 높이 대신 자동 높이로 변경 */
+  min-height: 1300px; /* 최소 높이만 지정 */
   padding: 20px;
   box-sizing: border-box;
   background-color: rgba(250, 250, 250, .3);
@@ -183,6 +218,35 @@
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
+}
+
+/* 포트폴리오 유튜브 섹션 */
+.portfolio-youtube-section {
+  margin: 40px auto 60px auto; /* 하단 여백 증가 */
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+}
+
+.portfolio-youtube-container {
+  position: relative;
+  width: 70%;
+  max-width: 800px;
+  height: 0;
+  padding-bottom: 39.375%; /* 16:9 비율 (9/16 * 70) */
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.portfolio-youtube-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 .p-text-3{
@@ -205,7 +269,8 @@
 
 .portfolio_box{
   width: 50%;
-  height: calc(100% - 150px);
+  height: auto; /* 자동 높이로 변경 */
+  min-height: 400px; /* 최소 높이 지정 */
 }
 
 .music-box_wrap{
@@ -213,7 +278,7 @@
   height: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 15px; /* 20px에서 15px로 더 줄임 */
 }
 
 .music-box_wrap iframe{
@@ -223,7 +288,7 @@
 
 .music-box{
   width: 100%;
-  height: 150px;
+  height: 130px; /* 140px에서 130px로 더 줄임 */
   background-color: #333333;
   box-shadow: 5px 5px 3px #595959;
   border-radius: 10px;
@@ -256,25 +321,18 @@
 
 .gallery-warp{
   width: 100%;
-  height: calc(100% - 250px);
-  display: flex;
-  gap: 30px;
-  transition-duration: 0.3s;
-}
-
-.g-box-left{
-  width: 883px;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid; /* flex에서 grid로 변경 */
+  grid-template-columns: repeat(5, 1fr); /* 5열 그리드 */
   gap: 20px;
   transition-duration: 0.3s;
 }
 
+.g-box-left{
+  display: contents; /* grid의 직접 자식으로 만들기 */
+}
+
 .g-box-right{
-  width: calc(100% - 883px);
-  height: 100%;
-  transition-duration: 0.3s;
+  display: contents; /* grid의 직접 자식으로 만들기 */
 }
 
 .g-box-right img{
@@ -284,7 +342,8 @@
 }
 
 .gallery-con{
-  width: 200px;
+  width: 100%; /* grid에서 자동 크기 */
+  aspect-ratio: 1; /* 정사각형 비율 유지 */
   border-radius: 12px;
   box-sizing: border-box;
 }
@@ -292,42 +351,50 @@
 .gallery-con img{
   display: block;
   border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer; /* 클릭 가능한 커서 추가 */
+  transition: transform 0.3s ease; /* 호버 효과를 위한 트랜지션 */
 }
 
-.g-con-1{
-  height: 200px;
-  /* border: 4px solid #00C2CB; */
-}
-
-.g-con-2{
-  height: 250px;
-  /* border: 4px solid #FFB703; */
-}
-
-.g-con-3{
-  height: 300px;
-  /* border: 4px solid #8C52FF; */
-}
-
-.g-con-4{
-  width: 420px;
-  height: 250px;
-  /* border: 4px solid #FFB703; */
+.gallery-con:hover img {
+  transform: scale(1.05); /* 호버 시 확대 효과 */
 }
 
 /*  */
 
 .box_5{
   margin: 30px 0;
-  height: 600px;
+  height: auto; /* 자동 높이로 변경 */
+  min-height: 600px;
 }
 
 .footer_wrap{
   width: 100%;
   height: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column; /* 세로 정렬로 변경 */
   justify-content: center;
+}
+
+/* PC 이미지 팝업 최적화 */
+.image-container {
+  max-width: 80vw;
+  max-height: 80vh;
+}
+
+.image-container img {
+  height: 70vh; /* 고정 높이 설정 */
+  width: auto; /* 비율에 맞게 자동 너비 */
+  max-width: 80vw; /* 최대 너비 제한 */
+  object-fit: contain;
+}
+
+/* PC 유튜브 갤러리 */
+.youtube-gallery-container {
+  grid-template-columns: repeat(4, 1fr); /* PC에서는 4열 */
+  gap: 30px;
 }
 
 .e-mail_text{

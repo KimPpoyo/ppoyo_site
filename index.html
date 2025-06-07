@@ -20,6 +20,34 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cabin+Sketch:wght@400;700&family=Noto+Sans+KR:wght@100..900&family=Poor+Story&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- 유튜브 레이어 팝업 -->
+  <div id="youtube-popup" class="popup-overlay">
+    <div class="popup-content">
+      <button class="popup-close">&times;</button>
+      <div class="youtube-container">
+        <iframe id="youtube-iframe" 
+                src="" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen
+                style="width: 100%; height: 100%; border: none;">
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- 이미지 레이어 팝업 -->
+  <div id="image-popup" class="popup-overlay">
+    <div class="popup-content image-popup-content">
+      <button class="popup-close">&times;</button>
+      <div class="image-container">
+        <img id="popup-image" src="" alt="">
+      </div>
+    </div>
+  </div>
+
   <div class="wrap">
     <div class="blur-background"></div> 
     <div class="out_box box_1 main_wrap">
@@ -30,7 +58,7 @@
             PPOYO
           </p>
           <p class="main-text mid-main-text">
-            MUSICIAN / COMPOSER & ARTIST
+            MUSICIAN / ARTIST
           </p>
           <p class="main-text small-main-text">
             <br>LOADING...
@@ -71,17 +99,75 @@
         PROFILE
       </div>
       <div class="profile-text-wrap">
-        <p class="p-text-1">활동이력</p>
-        <p class="p-text-2">2022 ~ 2025 루시드림</p>
-        <p class="p-text-2">2021 ~ 2023 에러비</p>
-        <p class="p-text-1">작곡이력</p>
-        <p class="p-text-2">옥타바리움 엔지니어</p>
+        <div class="profile-section">
+          <p class="p-text-1">활동이력</p>
+          <p class="p-text-2">2018~2022 ERROR-B 리더 (전)</p>
+          <p class="p-text-2">2022.04 ~  팀 LuciDreaM 소속 (현)</p>
+          <p class="p-text-2">2023.08 ~  팀 RAMUNE 소속 (현)</p>
+          <p class="p-text-2">2024.06 ~  옥타바리움 라이브홀 엔지니어(현)</p>
+        </div>
+        
+        <div class="profile-section">
+          <p class="p-text-1">작곡</p>
+          <div class="composition-list">
+            <p class="p-text-2">ERROR-B - 잿빛도시</p>
+            <p class="p-text-2">ERROR-B - 망가진추억</p>
+            <p class="p-text-2">LuciDreaM - 네게 전하지 못한 이야기</p>
+            <p class="p-text-2">LuciDreaM - are you ready? (SE)</p>
+            <p class="p-text-2">Proxima Club - Last game</p>
+            <p class="p-text-2">Proxima Club - 낙원 (落園)</p>
+            <p class="p-text-2">Proxima Club - X X X X (SE)</p>
+            <p class="p-text-2">KIRA! SUN - GET BACK SUN!</p>
+            <p class="p-text-2">Ugoke ! ! Poupée Land - Manège</p>
+            <p class="p-text-2">C.LiTZ - CAN'T STOP, CAT STEP</p>
+            <p class="p-text-2">YUB!KiRi - えいえいお! (에이에이오)</p>
+            <p class="p-text-2">나비 (Nab2) - 여우별</p>
+            <p class="p-text-2">나비 (Nab2) - 너의 푸름이 지지 않도록</p>
+            <p class="p-text-2">YOOSOO(妖怪騒動) - 지구를 침략하는 방법</p>
+            <p class="p-text-2">YOOSOO(妖怪騒動) - first Christmas</p>
+            <p class="p-text-2">NEKIRU - Dear. PLUTO (Bonus Track)</p>
+            <p class="p-text-2">NEKIRU - 만유인력 SE</p>
+            <p class="p-text-2">WAGAON - 빈칸(blank)</p>
+            <p class="p-text-2">HIROCHU - Happily ever after</p>
+            <p class="p-text-2">NEO-ASFiK - 벽(壁)</p>
+            <p class="p-text-2">冥界生物管理監察課(명계생물관리감찰과) - 命伝</p>
+            <p class="p-text-2">절대전력Z - VS</p>
+            <p class="p-text-2">RAMUNE - RAMUNE!!</p>
+            <p class="p-text-2">RAMUNE - 탄산 MAX! LOVE♡RACING!!</p>
+            <p class="p-text-2">SOAROVER - Born to fly(SE)</p>
+            <p class="p-text-2">𝑴𝒆𝒘𝒓𝒐 - Starry Milky Way</p>
+            <p class="p-text-2">유라사이 (YURASAI) - Save P0int</p>
+            <p class="p-text-2">아이코메 SE</p>
+            <p class="p-text-2">오엔 SE</p>
+            <p class="p-text-2">그여름날의 우리는 SE</p>
+            <p class="p-text-2">미래 솔로SE</p>
+            <p class="p-text-2">타키온 SE</p>
+            <p class="p-text-2">아이슈 SE</p>
+            <p class="p-text-2">텐시후로 SE</p>
+            <p class="p-text-2">요오소오 SE</p>
+            <p class="p-text-2">카와나리 SE</p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="out_box box_3 portfolio_wrap">
       <div class="title portfolio_title">
-        PROFILE
+        PORTFOLIO
       </div>
+      
+      <!-- 포트폴리오 유튜브 영역 -->
+      <div class="portfolio-youtube-section">
+        <div class="portfolio-youtube-container">
+          <iframe src="https://www.youtube.com/embed/jQ9v0uWSqPg?si=RdGxQpZMvslxl2Ku" 
+                  title="YouTube video player" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerpolicy="strict-origin-when-cross-origin" 
+                  allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+      
       <div class="portfolio_box-wrap">
         <div class="portfolio_box p-left-box">
           <p class="p-text-3">귀여운 장르</p>
@@ -144,15 +230,83 @@
             <div class="gallery-con g-con-1">
               <img src="./img/gallery_9.jpg" alt="">
             </div>
-          </div>
-          <div class="gallery-box g-box-right">
-            <img src="./img/gallery_13.jpg" alt="">
+            <div class="gallery-con g-con-1">
+              <img src="./img/gallery_13.jpg" alt="">
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div class="out_box box_5 footer_wrap">
-      <iframe width="700" height="400" src="https://www.youtube.com/embed/jQ9v0uWSqPg?si=RdGxQpZMvslxl2Ku" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="youtube-gallery-section">
+        <div class="youtube-gallery-container">
+          <!-- 유튜브 아이템들 -->
+          <div class="youtube-item" data-video-id="R-a_RCvWkSM">
+            <div class="youtube-thumbnail">
+              <img src="https://img.youtube.com/vi/R-a_RCvWkSM/mqdefault.jpg" alt="키라썬 - 겟백썬">
+              <div class="play-button">▶</div>
+            </div>
+            <h3 class="youtube-title">키라썬 - 겟백썬</h3>
+          </div>
+
+          <div class="youtube-item" data-video-id="WKK37rAizaI">
+            <div class="youtube-thumbnail">
+              <img src="https://img.youtube.com/vi/WKK37rAizaI/mqdefault.jpg" alt="루시드림 - 네게 전하지 못한 이야기">
+              <div class="play-button">▶</div>
+            </div>
+            <h3 class="youtube-title">루시드림 - 네게 전하지 못한 이야기</h3>
+          </div>
+
+          <div class="youtube-item" data-video-id="0U3Oa7T7JhQ">
+            <div class="youtube-thumbnail">
+              <img src="https://img.youtube.com/vi/0U3Oa7T7JhQ/mqdefault.jpg" alt="와가온 - 빈칸">
+              <div class="play-button">▶</div>
+            </div>
+            <h3 class="youtube-title">와가온 - 빈칸</h3>
+          </div>
+
+          <div class="youtube-item" data-video-id="4FbtDibGLpg">
+            <div class="youtube-thumbnail">
+              <img src="https://img.youtube.com/vi/4FbtDibGLpg/mqdefault.jpg" alt="프록시마클럽 - 낙원">
+              <div class="play-button">▶</div>
+            </div>
+            <h3 class="youtube-title">프록시마클럽 - 낙원</h3>
+          </div>
+
+          <div class="youtube-item" data-video-id="Xnbqlr4HjSg">
+            <div class="youtube-thumbnail">
+              <img src="https://img.youtube.com/vi/Xnbqlr4HjSg/mqdefault.jpg" alt="프록시마클럽 - last game">
+              <div class="play-button">▶</div>
+            </div>
+            <h3 class="youtube-title">프록시마클럽 - last game</h3>
+          </div>
+
+          <div class="youtube-item" data-video-id="Iemz1Vp8by0">
+            <div class="youtube-thumbnail">
+              <img src="https://img.youtube.com/vi/Iemz1Vp8by0/mqdefault.jpg" alt="에러비 - 망가진 추억">
+              <div class="play-button">▶</div>
+            </div>
+            <h3 class="youtube-title">에러비 - 망가진 추억</h3>
+          </div>
+
+          <div class="youtube-item" data-video-id="KbZ_rnU3e4o">
+            <div class="youtube-thumbnail">
+              <img src="https://img.youtube.com/vi/KbZ_rnU3e4o/mqdefault.jpg" alt="요오소오 - 지구를 침략하는 방법">
+              <div class="play-button">▶</div>
+            </div>
+            <h3 class="youtube-title">요오소오 - 지구를 침략하는 방법</h3>
+          </div>
+
+          <div class="youtube-item" data-video-id="HLF_uscmZRs">
+            <div class="youtube-thumbnail">
+              <img src="https://img.youtube.com/vi/HLF_uscmZRs/mqdefault.jpg" alt="요오소오 - 퍼스트 크리스마스">
+              <div class="play-button">▶</div>
+            </div>
+            <h3 class="youtube-title">요오소오 - 퍼스트 크리스마스</h3>
+          </div>
+        </div>
+      </div>
+      
       <p class="e-mail_text">
         ppoyo_official@naver.com
       </p>
