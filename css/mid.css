@@ -123,9 +123,7 @@
     width: 100%;
     max-width: 1200px;
     height: 550px; /* 400px에서 550px로 증가 */
-    background-image: url(../img/profie-img.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: #000000; /* 배경 이미지 대신 검정색 */
     padding: 20px;
     box-sizing: border-box;
   }

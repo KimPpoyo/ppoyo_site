@@ -125,9 +125,7 @@
     width: 100%;
     height: auto; /* 90vh에서 auto로 변경하여 내용에 맞게 조정 */
     min-height: 90vh; /* 최소 높이는 90vh로 설정 */
-    background-image: url(../img/profie-img.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: #000000; /* 배경 이미지 대신 검정색 */
     padding: 20px;
     box-sizing: border-box;
   }
