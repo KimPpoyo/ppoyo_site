@@ -383,6 +383,27 @@
     font-size: 1.5rem;
     text-align: center;
   }
+
+  /* 태블릿용 트위터 섹션 */
+  .twitter-section {
+    max-width: 500px;
+    margin: 40px auto;
+  }
+
+  .twitter-section h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+
+  .twitter-widget-container {
+    width: 100%;
+  }
+
+  .twitter-widget-container .twitter-timeline {
+    margin: 0 auto !important;
+    max-width: 450px !important;
+    width: 100% !important;
+  }
   
   
   

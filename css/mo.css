@@ -413,6 +413,29 @@
     text-align: center;
   }
 
+  /* 모바일용 트위터 섹션 */
+  .twitter-section {
+    max-width: 100%;
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+
+  .twitter-section h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
+
+  .twitter-widget-container {
+    width: 100%;
+  }
+
+  .twitter-widget-container .twitter-timeline {
+    margin: 0 auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    height: 400px !important;
+  }
+
   /* 모바일용 팝업 스타일 */
   .popup-content {
     padding: 15px;

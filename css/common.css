@@ -249,3 +249,29 @@ html,body{
 .youtube-item:hover .youtube-title {
   color: #ff0000;
 }
+
+/* 트위터 섹션 스타일 */
+.twitter-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.twitter-section h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 32px;
+  color: #333;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.twitter-widget-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}

@@ -404,6 +404,27 @@
   text-align: center;
 }
 
+/* PC용 트위터 섹션 */
+.twitter-section {
+  max-width: 600px;
+  margin: 50px auto;
+}
+
+.twitter-section h2 {
+  font-size: 36px;
+  margin-bottom: 35px;
+}
+
+.twitter-widget-container {
+  width: 100%;
+}
+
+.twitter-widget-container .twitter-timeline {
+  margin: 0 auto !important;
+  max-width: 500px !important;
+  width: 100% !important;
+}
+
 
 
 
